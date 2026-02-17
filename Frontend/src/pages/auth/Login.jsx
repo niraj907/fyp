@@ -98,15 +98,15 @@ const Login = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between mb-8 px-1">
+                {/* <div className="flex items-center justify-between mb-8 px-1">
                     <div className="flex items-center gap-2 group cursor-pointer">
                         <input type="checkbox" id="checkbox" className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer" />
                         <label htmlFor="checkbox" className="text-sm text-gray-600 cursor-pointer group-hover:text-indigo-600 transition-colors">Remember me</label>
                     </div>
-                    {/* <Link to="/forgot-password" placeholder="Forgot Password" className="text-sm font-bold text-indigo-600 hover:underline underline-offset-4">
+                    <Link to="/forgot-password" placeholder="Forgot Password" className="text-sm font-bold text-indigo-600 hover:underline underline-offset-4">
                         Forgot Password?
-                    </Link> */}
-                </div>
+                    </Link>
+                </div> */}
 
                 <Button
                     type="submit"
