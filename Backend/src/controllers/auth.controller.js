@@ -1,5 +1,6 @@
 import { User } from "../models/auth.model.js";
 import jwt from "jsonwebtoken";
+import cloudinary from "../config/cloudinary.js";
 
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -33,6 +34,7 @@ export const signup = async (req, res) => {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
+                image: user.image || "",
                 role: user.role,
                 token: generateToken(user._id),
             });
@@ -53,6 +55,7 @@ export const login = async (req, res) => {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
+                image: user.image || "",
                 role: user.role,
                 token: generateToken(user._id),
             });
@@ -84,25 +87,55 @@ export const updateProfile = async (req, res) => {
     try {
         const user = await User.findById(req.user._id);
 
-        if (user) {
-            user.name = req.body.name || user.name;
-            if (req.body.password) {
-                user.password = req.body.password;
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Update name if provided
+        user.name = req.body.name || user.name;
+
+        // Handle image upload (supports both file upload and base64)
+        let imageData = null;
+
+        if (req.file) {
+            // File uploaded via form-data (multer)
+            const base64Image = `data:${req.file.mimetype};base64,${req.file.buffer.toString("base64")}`;
+            imageData = base64Image;
+        } else if (req.body.image) {
+            // Base64 string sent via JSON
+            imageData = req.body.image;
+        }
+
+        if (imageData) {
+            // If user already has an image, delete old one from Cloudinary
+            if (user.image) {
+                const oldPublicId = user.image.split("/").pop().split(".")[0];
+                await cloudinary.uploader.destroy(`profile_images/${oldPublicId}`);
             }
 
-            const updatedUser = await user.save();
-
-            res.json({
-                _id: updatedUser._id,
-                name: updatedUser.name,
-                email: updatedUser.email,
-                role: updatedUser.role,
-                token: generateToken(updatedUser._id),
+            // Upload new image to Cloudinary
+            const uploadResult = await cloudinary.uploader.upload(imageData, {
+                folder: "profile_images",
+                // transformation: [
+                //     { width: 300, height: 300, crop: "fill", gravity: "face" },
+                // ],
             });
-        } else {
-            res.status(404).json({ message: "User not found" });
+
+            user.image = uploadResult.secure_url;
         }
+
+        const updatedUser = await user.save();
+
+        res.json({
+            _id: updatedUser._id,
+            name: updatedUser.name,
+            email: updatedUser.email,
+            image: updatedUser.image || "",
+            role: updatedUser.role,
+            token: generateToken(updatedUser._id),
+        });
     } catch (error) {
+        console.error("Error in updateProfile:", error.message);
         res.status(500).json({ message: error.message });
     }
 };

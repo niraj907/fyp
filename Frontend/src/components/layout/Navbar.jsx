@@ -8,6 +8,7 @@ import { logoutData } from '../../constants/confirmdata';
 import Button from '../ui/Button';
 import SettingsModal from '../../pages/Settings';
 import DeleteAccount from '../../pages/user/DeleteAccount';
+import EditProfile from '@/pages/EditProfile';
 
 const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     const { user, logout } = useAuthStore();
@@ -25,6 +26,11 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
     const handleSettings = () => {
         setIsUserDropdownOpen(false);
         setOpenModal("setting");
+    };
+
+    const handleEditProfile = () => {
+        setIsUserDropdownOpen(false);
+        setOpenModal("editProfile");
     };
 
     const handleDelete = () => {
@@ -79,7 +85,10 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
                         <Menu size={22} />
                     </Button>
 
-                    <div className="flex items-center gap-2.5 group cursor-pointer">
+                    <div onClick={() =>
+                        user?.role === 'admin' ? navigate('/admin') : navigate('/user')}
+
+                        className="flex items-center gap-2.5 group cursor-pointer">
                         <div className="w-9 h-9 bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-xl flex items-center justify-center shadow-md shadow-indigo-100 group-hover:scale-110 transition-all duration-300">
                             <Zap size={20} className="text-white fill-white/20" />
                         </div>
@@ -138,6 +147,19 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
 
                                     <Button
                                         variant="ghost"
+                                        onClick={handleEditProfile}
+                                        leftIcon={
+                                            <div className="p-1.5 bg-gray-50 rounded-lg group-hover:bg-indigo-50 transition-colors">
+                                                <User size={16} />
+                                            </div>
+                                        }
+                                        className="w-full justify-start gap-4 px-3 py-2.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 hover:bg-indigo-50/30 rounded-xl transition-all duration-200 group"
+                                    >
+                                        Edit Profile
+                                    </Button>
+
+                                    <Button
+                                        variant="ghost"
                                         onClick={handleSettings}
                                         leftIcon={
                                             <div className="p-1.5 bg-gray-50 rounded-lg group-hover:bg-indigo-50 transition-colors">
@@ -148,6 +170,8 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
                                     >
                                         Settings
                                     </Button>
+
+
 
                                     <Button
                                         variant="ghost"
@@ -203,6 +227,10 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
 
             {openModal === "delete" && (
                 <DeleteAccount onClose={() => setOpenModal(null)} />
+            )}
+
+            {openModal === "editProfile" && (
+                <EditProfile onClose={() => setOpenModal(null)} />
             )}
         </>
     );

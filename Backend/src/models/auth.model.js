@@ -13,6 +13,9 @@ const userSchema = new mongoose.Schema(
       unique: true,
       lowercase: true,
     },
+    image: {
+      type: String,
+    }, // optional field
     password: {
       type: String,
       required: true,
