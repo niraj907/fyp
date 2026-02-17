@@ -1,0 +1,56 @@
+// {
+//     "compilerOptions": {
+//         "baseUrl": ".",
+//         "paths": {
+//             "@/*": [
+//                 "./src/*"
+//             ],
+//             "@components/*": [
+//                 "./src/components/*"
+//             ],
+//             "@pages/*": [
+//                 "./src/pages/*"
+//             ],
+//             "@assets/*": [
+//                 "./src/assets/*"
+//             ],
+//             "@services/*": [
+//                 "./src/services/*"
+//             ],
+//             "@utils/*": [
+//                 "./src/utils/*"
+//             ],
+//             "@hooks/*": [
+//                 "./src/hooks/*"
+//             ],
+//             "@context/*": [
+//                 "./src/context/*"
+//             ],
+//             "@routes/*": [
+//                 "./src/routes/*"
+//             ],
+//             "@store/*": [
+//                 "./src/store/*"
+//             ],
+//             "@styles/*": [
+//                 "./src/styles/*"
+//             ],
+//             "@constants/*": [
+//                 "./src/constants/*"
+//             ]
+//         }
+//     },
+//     "include": [
+//         "src"
+//     ]
+// }
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
+    }
+}
