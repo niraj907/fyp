@@ -116,9 +116,9 @@ export const updateProfile = async (req, res) => {
             // Upload new image to Cloudinary
             const uploadResult = await cloudinary.uploader.upload(imageData, {
                 folder: "profile_images",
-                // transformation: [
-                //     { width: 300, height: 300, crop: "fill", gravity: "face" },
-                // ],
+                transformation: [
+                    { quality: "auto", fetch_format: "auto" }
+                ],
             });
 
             user.image = uploadResult.secure_url;
