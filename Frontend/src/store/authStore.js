@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import axiosPrivate from '../../utils/axiosPrivate';
+import axiosPrivate from '../utils/axiosPrivate';
 
 export const useAuthStore = create((set) => ({
   user: JSON.parse(localStorage.getItem('user')) || null,

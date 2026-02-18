@@ -3,7 +3,7 @@ import { Mail, Lock, Loader, FaEye, FaEyeSlash } from '../../constants/icons';
 import { toast } from "sonner";
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useAuthStore } from '../../components/store/authStore';
+import { useAuthStore } from '../../store/authStore';
 import Button from '../../components/ui/Button';
 
 

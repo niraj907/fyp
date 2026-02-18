@@ -5,18 +5,18 @@ import Login from './pages/auth/Login';
 import ProtectedRoute from './ProtectedRoute';
 
 // Layouts
-import AdminLayout from './pages/admin/AdminLayout';
-import UserLayout from './pages/user/UserLayout';
+import AdminLayout from './components/layout/AdminLayout';
+import UserLayout from './components/layout/UserLayout';
 
 // Admin Pages
-import AdminDashboardHome from './pages/admin/DashboardHome';
+import AdminDashboardHome from './pages/admin/AdminHome';
 import UsersList from './pages/admin/UsersList';
 
 // User Pages
-import UserDashboardHome from './pages/user/DashboardHome';
+import UserDashboardHome from './pages/user/UserHome';
 
 // Shared Components
-import PlaceholderPage from './components/layout/PlaceholderPage';
+import PlaceholderPage from './components/common/PlaceholderPage';
 
 const App = () => {
   return (

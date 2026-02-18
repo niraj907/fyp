@@ -1,7 +1,7 @@
 import React from 'react';
 import DashboardLayout from '../../components/layout/DashboardLayout';
 import { userMenuItems } from '../../constants/menuItems';
-import { useAuthStore } from '../../components/store/authStore';
+import { useAuthStore } from '../../store/authStore';
 
 const UserDashboard = () => {
     const { user } = useAuthStore();

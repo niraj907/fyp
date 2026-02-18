@@ -1,9 +1,9 @@
-import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3 } from 'lucide-react';
+import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3 } from './icons';
 
 // Admin sidebar menu
 export const adminMenuItems = [
     { label: 'Dashboard', icon: LayoutDashboard, path: '/admin' },
-    { label: 'Users', icon: Users, path: '/admin/users' },
+    { label: 'Userss', icon: Users, path: '/admin/users' },
     { label: 'Overview', icon: BarChart3, path: '/admin/overview' },
     { label: 'Chat', icon: MessageSquare, path: '/admin/chat' },
     { label: 'Settings', icon: Settings, path: '/admin/settings' },

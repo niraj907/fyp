@@ -1,5 +1,5 @@
 import React from 'react';
-import { X } from 'lucide-react';
+import { X } from '../../constants/icons';
 import Button from '../ui/Button';
 
 const confirmModel = ({

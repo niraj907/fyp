@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Lock, X } from 'lucide-react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { Lock, X, FaEye, FaEyeSlash } from '../constants/icons';
 import { toast } from 'sonner';
 import Button from '../components/ui/Button';
 import axiosPrivate from "@/utils/axiosPrivate";

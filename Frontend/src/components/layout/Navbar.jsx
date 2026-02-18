@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Menu, Zap, User, Settings, Shield, MessageSquare, Trash2 } from 'lucide-react';
-import { useAuthStore } from '../store/authStore';
-import ConfirmModel from '../model/confirmModel';
+import { LogOut, Menu, Zap, User, Settings, Shield, MessageSquare, Trash2 } from '../../constants/icons';
+import { useAuthStore } from '../../store/authStore';
+import ConfirmModel from '../modal/ConfirmModal';
 import { toast } from 'sonner';
 import { logoutData } from '../../constants/confirmdata';
 import Button from '../ui/Button';

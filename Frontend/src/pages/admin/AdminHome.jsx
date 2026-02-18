@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuthStore } from '../../components/store/authStore';
+import { useAuthStore } from '../../store/authStore';
 
 const AdminDashboardHome = () => {
     const { user } = useAuthStore();

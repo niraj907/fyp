@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { X, Camera } from "lucide-react";
+import { X, Camera } from "@/constants/icons";
 import { toast } from "sonner";
 import axiosPrivate from "@/utils/axiosPrivate";
 import { useMutation } from "@tanstack/react-query";
-import { useAuthStore } from "@/components/store/authStore";
+import { useAuthStore } from "@/store/authStore";
 import Button from "@/components/ui/Button";
 
 const EditProfile = ({ onClose }) => {
@@ -157,8 +157,8 @@ const EditProfile = ({ onClose }) => {
                                             id="name"
                                             placeholder="Your full name"
                                             className={`mt-1 block w-full px-4 py-3 border rounded-xl outline-none transition-all duration-200 bg-gray-50/50 focus:bg-white ${errors.name
-                                                    ? "border-red-500 focus:ring-4 focus:ring-red-50 focus:border-red-500"
-                                                    : "border-gray-200 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-50"
+                                                ? "border-red-500 focus:ring-4 focus:ring-red-50 focus:border-red-500"
+                                                : "border-gray-200 focus:border-indigo-400 focus:ring-4 focus:ring-indigo-50"
                                                 }`}
                                             {...register("name", {
                                                 required: "Name is required",

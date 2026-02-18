@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShieldAlert, X } from "lucide-react";
+import { ShieldAlert, X } from "../../constants/icons";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useMutation } from "@tanstack/react-query";
