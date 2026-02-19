@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X } from '../../constants/icons';
 import Button from '../ui/Button';
 
@@ -13,6 +13,16 @@ const confirmModel = ({
     iconBgColor,
     iconColor
 }) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleConfirmClick = () => {
+        setIsLoading(true);
+        setTimeout(() => {
+            onConfirm();
+            // setIsLoading(false); // Modal usually unmounts after onConfirm
+        }, 1000);
+    };
+
     return (
         <div
             role="dialog"
@@ -65,7 +75,8 @@ const confirmModel = ({
                         variant="primary"
                         className="flex-1 rounded-xl"
                         style={buttonColor ? { backgroundColor: buttonColor } : {}}
-                        onClick={onConfirm}
+                        onClick={handleConfirmClick}
+                        isLoading={isLoading}
                     >
                         {buttonText}
                     </Button>
