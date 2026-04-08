@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useAuthStore } from '../../store/authStore';
+import Button from '@/components/ui/Button';
 
 
 const SignupPage = () => {
@@ -152,17 +153,18 @@ const SignupPage = () => {
                 </div>
 
                 {/* Submit Button */}
-                <button
+                <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-[#66659F] hover:bg-[#5a598d] disabled:bg-indigo-300 transition-all duration-300 py-3.5 rounded-xl text-white font-bold shadow-lg shadow-indigo-100 flex justify-center items-center active:scale-[0.98]"
+                    className="w-full h-12 rounded-xl text-lg font-bold shadow-lg shadow-indigo-100"
+                    style={{ backgroundColor: '#66659F' }}
                 >
                     {isLoading ? (
                         <Loader className="w-6 h-6 animate-spin" />
                     ) : (
                         "Create Account"
                     )}
-                </button>
+                </Button>
 
                 <p className="text-center mt-6 text-gray-600">
                     Already have an account?{" "}

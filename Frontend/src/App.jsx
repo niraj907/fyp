@@ -17,6 +17,7 @@ import UserDashboardHome from './pages/user/UserHome';
 
 // Shared Components
 import PlaceholderPage from './components/common/PlaceholderPage';
+import CreateCategories from './pages/user/CreateCategories';
 
 const App = () => {
   return (
@@ -51,9 +52,12 @@ const App = () => {
         }
       >
         <Route index element={<UserDashboardHome />} />
-        <Route path="overview" element={<PlaceholderPage title="Overview" />} />
-        <Route path="chat" element={<PlaceholderPage title="Chat" />} />
-        <Route path="settings" element={<PlaceholderPage title="Settings" />} />
+        <Route path="categories" element={<CreateCategories />} />
+        <Route path="transactions" element={<PlaceholderPage title="Transactions" />} />
+        <Route path="budgets" element={<PlaceholderPage title="Budgets" />} />
+        <Route path="receipts" element={<PlaceholderPage title="Receipts" />} />
+        <Route path="analytics" element={<PlaceholderPage title="Analytics" />} />
+
       </Route>
 
       {/* Catch all - redirect to login */}

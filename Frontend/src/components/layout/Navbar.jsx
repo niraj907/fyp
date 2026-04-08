@@ -93,7 +93,7 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
                             <Zap size={20} className="text-white fill-white/20" />
                         </div>
                         <span className="text-xl font-extrabold text-gray-800 tracking-tight whitespace-nowrap">
-                            Pragati<span className="text-indigo-600">Bista</span>
+                            Expense<span className="text-indigo-600">Tracker</span>
                         </span>
                     </div>
                 </div>
@@ -171,19 +171,6 @@ const Navbar = ({ isSidebarOpen, toggleSidebar }) => {
                                         Settings
                                     </Button>
 
-
-
-                                    <Button
-                                        variant="ghost"
-                                        leftIcon={
-                                            <div className="p-1.5 bg-gray-50 rounded-lg group-hover:bg-indigo-50 transition-colors">
-                                                <MessageSquare size={16} />
-                                            </div>
-                                        }
-                                        className="w-full justify-start gap-4 px-3 py-2.5 text-sm font-semibold text-gray-600 hover:text-indigo-600 hover:bg-indigo-50/30 rounded-xl transition-all duration-200 group"
-                                    >
-                                        Support
-                                    </Button>
 
                                     <div className="h-px bg-gray-100/50 my-1 mx-2" />
 

@@ -83,15 +83,13 @@ const Login = () => {
                                 }
                             })}
                         />
-                        <Button
+                        <button
                             type="button"
-                            variant="ghost"
-                            size="icon"
                             onClick={() => setShowPassword(!showPassword)}
-                            className="text-gray-400 hover:text-indigo-500 h-8 w-8"
+                            className="text-gray-400 hover:text-indigo-500 transition-colors flex items-center justify-center"
                         >
                             {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
-                        </Button>
+                        </button>
                     </div>
                     <div className="h-5 mt-1">
                         {errors.password && <p className="text-red-500 text-xs font-medium ml-1">{errors.password.message}</p>}

@@ -1,4 +1,4 @@
-import { Mail, Lock, User, Loader, Menu, X, LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Loader2, Zap, Shield, Trash2, LogOut, ShieldAlert, Camera } from 'lucide-react';
+import { Mail, Lock, User, Loader, Menu, X, LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Loader2, Zap, Shield, Trash2, LogOut, ShieldAlert, Camera, Tags, ReceiptText, Wallet } from 'lucide-react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export {
@@ -17,6 +17,9 @@ export {
     LogOut,
     ShieldAlert,
     Camera,
+    Tags,
+    ReceiptText,
+    Wallet,
     FaEye,
     FaEyeSlash
 };
